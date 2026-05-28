@@ -1,17 +1,8 @@
 {
-  "name": "lvg-creative",
+  "name": "lvg-creative-static",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
-  },
-  "devDependencies": {}
+    "build": "mkdir -p dist && cp index.html dist/index.html && cp styles.css dist/styles.css && cp -R public dist/public"
+  }
 }
