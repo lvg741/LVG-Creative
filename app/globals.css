@@ -1,7 +1,55 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+:root {
+  --bg: #070712;
+  --panel: rgba(255,255,255,0.06);
+  --panel-strong: #111126;
+  --text: #ffffff;
+  --muted: #c7c7d6;
+  --purple: #8b5cf6;
+  --purple-light: #c4b5fd;
+}
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: Arial, Helvetica, sans-serif; }
+a { color: inherit; text-decoration: none; }
+.nav { max-width: 1180px; margin: 0 auto; padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 14px; font-size: 22px; font-weight: 800; }
+.brand img { height: 56px; width: auto; border-radius: 14px; background: white; padding: 4px; }
+.navLinks { display: flex; gap: 28px; color: var(--muted); }
+.navLinks a:hover { color: white; }
+.section { max-width: 1180px; margin: 0 auto; padding: 80px 24px; }
+.hero { min-height: 72vh; display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 48px; }
+.eyebrow { color: var(--purple-light); text-transform: uppercase; letter-spacing: 0.16em; font-size: 13px; font-weight: 800; }
+h1 { font-size: clamp(48px, 8vw, 86px); line-height: 0.95; margin: 16px 0 24px; letter-spacing: -0.06em; }
+h2 { font-size: clamp(34px, 5vw, 54px); line-height: 1; margin: 10px 0 30px; letter-spacing: -0.04em; }
+h3 { font-size: 23px; margin: 0 0 12px; }
+.lead { max-width: 650px; color: var(--muted); font-size: 20px; line-height: 1.7; }
+.muted, .card p, .portfolio p, .heroCard p, .contact p { color: var(--muted); line-height: 1.7; }
+.actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 34px; }
+.button { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 15px 24px; font-weight: 800; }
+.primary { background: var(--purple); color: white; }
+.secondary { border: 1px solid rgba(255,255,255,0.18); }
+.dark { background: #080812; color: white; margin-top: 18px; }
+.heroCard { border: 1px solid rgba(255,255,255,0.12); background: var(--panel); border-radius: 32px; padding: 40px; box-shadow: 0 30px 80px rgba(0,0,0,0.35); }
+.heroCard img { width: 100%; max-width: 300px; border-radius: 28px; background: white; padding: 8px; display: block; margin: 0 auto 28px; }
+.grid { display: grid; gap: 22px; margin-top: 32px; }
+.three { grid-template-columns: repeat(3, 1fr); }
+.four { grid-template-columns: repeat(4, 1fr); }
+.card, .portfolio { border: 1px solid rgba(255,255,255,0.12); background: var(--panel); border-radius: 28px; padding: 30px; }
+.stats { border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; padding: 56px 24px; }
+.stats div { text-align: center; }
+.stats strong { display: block; color: var(--purple-light); font-size: 52px; }
+.stats span { color: var(--muted); }
+.portfolio div { aspect-ratio: 16 / 10; border-radius: 20px; background: var(--panel-strong); color: var(--muted); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+.split { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 36px; }
+.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; counter-reset: item; }
+.steps li { counter-increment: item; border: 1px solid rgba(255,255,255,0.12); background: var(--panel); border-radius: 22px; padding: 22px; font-weight: 800; }
+.steps li::before { content: counter(item); background: white; color: #080812; border-radius: 999px; padding: 7px 12px; margin-right: 14px; }
+.contact { margin-bottom: 70px; border-radius: 36px; background: var(--purple); color: white; text-align: center; }
+.contact p { color: rgba(255,255,255,0.86); }
+.domain { font-weight: 800; }
+@media (max-width: 850px) {
+  .nav { align-items: flex-start; flex-direction: column; }
+  .navLinks { flex-wrap: wrap; }
+  .hero, .split, .three, .four, .stats { grid-template-columns: 1fr; }
+  .section { padding: 54px 20px; }
+}

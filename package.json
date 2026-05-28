@@ -1,5 +1,5 @@
 {
-  "name": "lvg-creative-site",
+  "name": "lvg-creative",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,16 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "latest",
-    "framer-motion": "latest",
-    "lucide-react": "latest",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
   },
-  "devDependencies": {
-    "autoprefixer": "latest",
-    "postcss": "latest",
-    "tailwindcss": "latest"
-  }
+  "devDependencies": {}
 }
